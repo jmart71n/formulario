@@ -3,8 +3,8 @@
 <suite name="Testing Formulario">
     <test name="Functional Test">
          <classes>
-             <class name="com.formulario.tests.FormElementsTest"/>
              <class name="com.formulario.tests.FormActionsTest"/>
+             <class name="com.formulario.tests.FormElementsTest"/>
              <class name="com.formulario.tests.CalendarTest"/>
           </classes>
      </test> <!-- Test -->
