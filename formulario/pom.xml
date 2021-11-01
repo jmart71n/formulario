@@ -56,6 +56,25 @@
   </dependencies>
   <build>
     <plugins>
+    <plugin>
+    <groupId>org.jacoco</groupId>
+    <artifactId>jacoco-maven-plugin</artifactId>
+    <version>0.8.4</version>
+    <executions>
+        <execution>
+            <goals>
+                <goal>prepare-agent</goal>
+            </goals>
+        </execution>
+        <execution>
+            <id>report</id>
+            <phase>prepare-package</phase>
+            <goals>
+                <goal>report</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
@@ -111,6 +130,14 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>${maven-surefire-plugin.version}</version>
+         <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>testing.xml</suiteXmlFile>
+          </suiteXmlFiles>
+             <includes>
+            <include>*.*</include>
+          </includes>
+        </configuration>
       </plugin>
       <plugin>
         <groupId>org.jacoco</groupId>

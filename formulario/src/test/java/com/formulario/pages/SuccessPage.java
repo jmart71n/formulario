@@ -24,8 +24,6 @@ public class SuccessPage {
     WebElement closeToast;
     @FindBy(how = How.CSS, using = "[data-field-name='WhyDidYouJoinTheTestingArea'] .loading-animation")
     WebElement textareaLoading;
-
-
     public SuccessPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -40,12 +38,15 @@ public class SuccessPage {
     public boolean isToastVisible() {
         return alertToast.isDisplayed();
     }
+
     public boolean isCloseToastVisible() {
         return closeToast.isDisplayed();
     }
+
     public boolean isToastTextOk(String text) {
         return alertToast.getText().contains(text);
     }
+
     public void waitForToast() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(ExpectedConditions.elementToBeClickable(alertToast));
