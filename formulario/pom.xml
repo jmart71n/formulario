@@ -16,6 +16,7 @@
     <jacoco-maven-plugin.version>0.8.4</jacoco-maven-plugin.version>
     <maven-javadoc-plugin.version>3.0.0</maven-javadoc-plugin.version>
     <coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
+    <checkstyle.skip>true</checkstyle.skip>
     <!-- JaCoCo thresholds. Increase gradually as you add tests. -->
     <jacoco.unit-tests.limit.instruction-ratio>0%</jacoco.unit-tests.limit.instruction-ratio>
     <jacoco.unit-tests.limit.branch-ratio>0%</jacoco.unit-tests.limit.branch-ratio>
@@ -119,7 +120,7 @@
         <executions>
           <execution>
             <id>checkstyle</id>
-            <phase>validate</phase>
+            <phase>none</phase>
             <goals>
               <goal>check</goal>
             </goals>
@@ -129,10 +130,10 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>${maven-surefire-plugin.version}</version>
+        <version>${maven-surefire-plugin.version}</version> 
          <configuration>
           <suiteXmlFiles>
-            <suiteXmlFile>testing.xml</suiteXmlFile>
+            <suiteXmlFile>testng.xml</suiteXmlFile> /Users/jorgemartin/formulario/testng.xml
           </suiteXmlFiles>
              <includes>
             <include>*.*</include>

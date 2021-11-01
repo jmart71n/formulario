@@ -3,9 +3,9 @@
 <suite name="Testing Formulario">
     <test name="Functional Test">
          <classes>
-             <class name="test.java.com.formulario.tests.CalendarTest.java"/>
-             <class name="test.java.com.formulario.tests.FormActionsTest.java"/>
-             <class name="test.java.com.formulario.tests.CalendarTest.java"/>
+             <class name="com.formulario.tests.FormElementsTest"/>
+             <class name="com.formulario.tests.FormActionsTest"/>
+             <class name="com.formulario.tests.CalendarTest"/>
           </classes>
      </test> <!-- Test -->
 </suite> <!-- Suite -->

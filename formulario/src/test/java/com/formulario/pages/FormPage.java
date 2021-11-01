@@ -12,41 +12,38 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FormPage {
     private WebDriver driver;
-
     @FindBy(how = How.CSS, using = "h1")
-    WebElement titlePage;
-
+    private WebElement titlePage;
     @FindBy(how = How.CSS, using = "[data-field-name='WhatIsYourName'] .loading-animation")
-    WebElement nameInputLoading;
+    private WebElement nameInputLoading;
     @FindBy(how = How.CSS, using = "[data-field-name='WhatIsTheDateOfYourBirth'] .loading-animation")
-    WebElement dateInputLoading;
+    private WebElement dateInputLoading;
     @FindBy(how = How.CSS, using = "[data-field-name='WhyDidYouJoinTheTestingArea'] .loading-animation")
-    WebElement textareaLoading;
+    private WebElement textareaLoading;
     @FindBy(how = How.CSS, using = "span[aria-atomic='true']")
-    WebElement invalidFormMessage;
-
+    private WebElement invalidFormMessage;
     @FindBy(how = How.CSS, using = "[data-field-name='WhatIsYourName'] input")
-    WebElement nameInput;
+    private WebElement nameInput;
     @FindBy(how = How.CSS, using = "[data-field-name='WhatIsYourName'] label")
-    WebElement nameInputLabel;
+    private WebElement nameInputLabel;
     @FindBy(how = How.CSS, using = "[data-field-name='WhatIsYourName'] .form-feedback-item")
-    WebElement nameInputMessage;
+    private WebElement nameInputMessage;
     @FindBy(how = How.CSS, using = "[data-field-name='WhatIsTheDateOfYourBirth'] .input-group-inset")
-    WebElement dateInput;
+    private WebElement dateInput;
     @FindBy(how = How.CSS, using = "[data-field-name='WhatIsTheDateOfYourBirth'] button")
-    WebElement calendarButton;
+    private WebElement calendarButton;
     @FindBy(how = How.CSS, using = "[data-field-name='WhatIsTheDateOfYourBirth'] label")
-    WebElement dateInputLabel;
+    private WebElement dateInputLabel;
     @FindBy(how = How.CSS, using = "[data-field-name='WhatIsTheDateOfYourBirth'] .form-feedback-item")
-    WebElement dateInputMessage;
+    private WebElement dateInputMessage;
     @FindBy(how = How.CSS, using = "[data-field-name='WhyDidYouJoinTheTestingArea'] textarea")
-    WebElement textarea;
+    private WebElement textarea;
     @FindBy(how = How.CSS, using = "[data-field-name='WhyDidYouJoinTheTestingArea'] label")
-    WebElement textareaLabel;
+    private WebElement textareaLabel;
     @FindBy(how = How.CSS, using = "[data-field-name='WhyDidYouJoinTheTestingArea'] .form-feedback-item")
-    WebElement textareaMessage;
+    private WebElement textareaMessage;
     @FindBy(how = How.ID, using = "ddm-form-submit")
-    WebElement submitButton;
+    private WebElement submitButton;
 
     public FormPage(WebDriver driver) {
         this.driver = driver;
@@ -92,7 +89,6 @@ public class FormPage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(ExpectedConditions.elementToBeClickable(textarea));
     }
-
     // -Title and subtitles
     public boolean isTitleOk(String title) {
         return titlePage.getText().contains(title);
@@ -105,7 +101,6 @@ public class FormPage {
     public boolean isInvalidFormMessageOk(String text) {
         return invalidFormMessage.getText().contains(text);
     }
-
     // -Submit Button
     public boolean isSubmitButtonVisible() {
         return submitButton.isDisplayed();
@@ -116,7 +111,6 @@ public class FormPage {
         wait.until(ExpectedConditions.elementToBeClickable(submitButton));
         clickOnElement(submitButton);
     }
-
     // -NameInput
     public boolean isNameInputVisible() {
         return nameInput.isDisplayed();
@@ -153,7 +147,6 @@ public class FormPage {
     public void setName(String name) {
         sendText(nameInput, name);
     }
-
     // -DateInput default
     public boolean isCalendarButtonVisible() {
         return calendarButton.isDisplayed();
@@ -198,7 +191,6 @@ public class FormPage {
     public void setDate(String date) {
         sendText(dateInput, date);
     }
-
     // -Textarea default
     public boolean isTextareaVisible() {
         return textarea.isDisplayed();
@@ -248,5 +240,4 @@ public class FormPage {
         sendText(textarea, comment);
         clickOnElement(submitButton);
     }
-
 }
